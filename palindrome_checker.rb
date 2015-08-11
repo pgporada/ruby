@@ -4,19 +4,16 @@
 
 def usage
     puts "Usage:"
-    puts "Enter a string as your first and only argument"
+    puts "Enter a string as your argument"
     puts "Example:"
     puts "#{$0} \"No 'x' in Nixon\""
     exit
 end
 
 def check_palindrome(uarg)
-    chars = uarg.delete(' ').split(//)
-
     # Strip non-alphanumeric chars as we want to be able to handle a palindromic sentence 
-    chars.each do |x|
-        chars = x.scan(/\w/)
-    end
+    tmp = uarg.gsub(/[^0-9a-z]/i, '') 
+    chars = tmp.delete(' ').split(//)
 
     # Get scalar length of the array
     size = chars.length
