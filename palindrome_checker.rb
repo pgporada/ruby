@@ -26,7 +26,7 @@ def check_palindrome(uarg)
     puts "Your string ==> '#{uarg}' <== is a palindrome! :)"
 end
 
-if ARGV.empty?
+if ARGV.empty? || ARGV.length > 1
     usage
     exit
 end
